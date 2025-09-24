@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd5qonjpaaq6l"]
+
+[ext_resource type="Script" uid="uid://bmgs7frrkxsah" path="res://Character/character.gd" id="1_k3002"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7dm0k"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3002"]
+size = Vector2(32, 32)
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_k3002")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_7dm0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="FoodCol" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodCol"]
+shape = SubResource("RectangleShape2D_k3002")
+
+[connection signal="area_entered" from="FoodCol" to="." method="_on_food_col_area_entered"]

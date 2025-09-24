@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ld3hwvdmh3h"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_vfox6"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cxgk"]
+size = Vector2(8, 8)
+
+[node name="Food" type="Area2D" groups=["food"]]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.6901961, 0, 1)
+mesh = SubResource("QuadMesh_vfox6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5cxgk")
