@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://clundngom7gvo"]
+
+[ext_resource type="Script" uid="uid://do1m82mudxdet" path="res://Enemy/enemy.gd" id="1_2pb1h"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_xjnqo"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pb1h"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnqo"]
+size = Vector2(32, 32)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_2pb1h")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0.25882354, 0, 1)
+mesh = SubResource("QuadMesh_xjnqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2pb1h")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xjnqo")

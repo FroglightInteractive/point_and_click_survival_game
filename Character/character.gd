@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var food_container: Node2D = $"../FoodContainer"
 
 @export var target: Node2D
-@export var speed: float = 100.0
+@export var speed: float = 150.0
 @export var acceleration: float = 25.0
 
 var score: int = 0

@@ -2,30 +2,23 @@
 
 [ext_resource type="Script" uid="uid://rry13eh55yfh" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dd5qonjpaaq6l" path="res://Character/character.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://d1ld3hwvdmh3h" path="res://Food/food.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://clundngom7gvo" path="res://Enemy/enemy.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h2yge")
 
 [node name="Character" parent="." instance=ExtResource("1_ig7tw")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Character"]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.5
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
 
 [node name="FoodContainer" type="Node2D" parent="."]
 
-[node name="Food" parent="FoodContainer" instance=ExtResource("2_0xm2m")]
-position = Vector2(-136, -48)
-
-[node name="Food2" parent="FoodContainer" instance=ExtResource("2_0xm2m")]
-position = Vector2(152, -16)
-
-[node name="Food3" parent="FoodContainer" instance=ExtResource("2_0xm2m")]
-position = Vector2(128, 120)
-
-[node name="Food4" parent="FoodContainer" instance=ExtResource("2_0xm2m")]
-position = Vector2(-56, 128)
-
-[node name="Food5" parent="FoodContainer" instance=ExtResource("2_0xm2m")]
-position = Vector2(-176, 88)
-
 [node name="CursorPos" type="Node2D" parent="."]
+
+[node name="Enemy" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(-80, -64)
